@@ -7,5 +7,11 @@ local map = vim.keymap.set
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
 -- 在 ~/.config/nvim/lua/plugins/keymaps.lua 中添加
-vim.keymap.set("n", "gh", "H", { desc = "Move to top of screen" })
-vim.keymap.set("n", "gl", "L", { desc = "Move to bottom of screen" })
+map("n", "gt", "H", { desc = "Move to top of screen" })
+map("n", "gb", "L", { desc = "Move to bottom of screen" })
+
+vim.api.nvim_create_user_command("EnterVisualBlock", function()
+	vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-v>", true, false, true), "n")
+end, { desc = "Enter Visual Block mode" })
+
+map("n", "<leader>v", "<cmd>EnterVisualBlock<CR>", { desc = "Visual Block" })
