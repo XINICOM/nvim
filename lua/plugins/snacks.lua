@@ -3,7 +3,16 @@ return {
 		"folke/snacks.nvim",
 		opts = {
 			picker = {
-				hidden = true, -- 全局启用，会影响所有 picker
+				sources = {
+					explorer = {
+						hidden = true,
+						ignored = true,
+					},
+					files = {
+						hidden = true, -- show dotfiles in fuzzy finder
+						ignored = true, -- optional: show gitignored files
+					},
+				},
 			},
 		},
 	},
