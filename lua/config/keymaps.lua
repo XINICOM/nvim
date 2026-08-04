@@ -10,6 +10,7 @@ map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 map("n", "gt", "H", { desc = "Move to top of screen" })
 map("n", "gb", "L", { desc = "Move to bottom of screen" })
 
+-- 使用 <leader>v 来唤起 Visual Block 模式
 vim.api.nvim_create_user_command("EnterVisualBlock", function()
 	vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-v>", true, false, true), "n")
 end, { desc = "Enter Visual Block mode" })
