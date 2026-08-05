@@ -30,3 +30,42 @@ vim.api.nvim_create_autocmd("BufLeave", {
 		vim.opt_local.spell = vim.opt.spell:get()
 	end,
 })
+
+-- 自动切换输入法
+local imselect = "im-select"
+local eng_im = "1033"
+local ch_im = "2052"
+
+vim.api.nvim_create_augroup("AutoSwitchIM", { clear = true })
+
+vim.api.nvim_create_autocmd("InsertEnter", {
+	group = "AutoSwitchIM",
+	pattern = "*",
+	callback = function()
+		vim.fn.jobstart({ imselect, ch_im })
+	end,
+})
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+	group = "AutoSwitchIM",
+	pattern = "*",
+	callback = function()
+		vim.fn.jobstart({ imselect, eng_im })
+	end,
+})
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	group = "AutoSwitchIM",
+	pattern = "*",
+	callback = function()
+		vim.fn.jobstart({ imselect, eng_im })
+	end,
+})
+
+vim.api.nvim_create_autocmd("VimLeave", {
+	group = "AutoSwitchIM",
+	pattern = "*",
+	callback = function()
+		vim.fn.jobstart({ imselect, ch_im })
+	end,
+})
