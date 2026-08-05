@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd("BufLeave", {
 })
 
 -- 自动切换输入法
-local imselect = "im-select"
+local imselect = "C:\\Program Files\\imselect\\im-select.exe"
 local eng_im = "1033"
 local ch_im = "2052"
 
