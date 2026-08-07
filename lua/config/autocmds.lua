@@ -83,3 +83,12 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 		vim.opt.relativenumber = rn_status
 	end,
 })
+
+vim.api.nvim_create_autocmd("User", {
+	pattern = "LazyLoad",
+	callback = function(args)
+		if args.data == "bufferline.nvim" then
+			vim.o.showtabline = 0
+		end
+	end,
+})
