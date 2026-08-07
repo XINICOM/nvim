@@ -69,21 +69,22 @@ vim.api.nvim_create_autocmd("VimLeave", {
 		vim.fn.jobstart({ imselect, ch_im })
 	end,
 })
-
--- 进入 insert 模式时禁用相对行号，退出时恢复
-local rn_status = false
-vim.api.nvim_create_autocmd("InsertEnter", {
-	callback = function()
-		rn_status = vim.opt.relativenumber
-		vim.opt.relativenumber = false
-	end,
-})
-vim.api.nvim_create_autocmd("InsertLeave", {
-	callback = function()
-		vim.opt.relativenumber = rn_status
-	end,
-})
-
+--
+-- -- 进入 insert 模式时禁用相对行号，退出时恢复
+-- -- local rn_status = false
+-- vim.api.nvim_create_autocmd("InsertEnter", {
+-- 	callback = function()
+-- 		-- rn_status = vim.opt.relativenumber
+-- 		vim.opt.relativenumber = false
+-- 	end,
+-- })
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+-- 	callback = function()
+-- 		-- vim.opt.relativenumber = rn_status
+-- 		vim.opt.relativenumber = true
+-- 	end,
+-- })
+--
 vim.api.nvim_create_autocmd("User", {
 	pattern = "LazyLoad",
 	callback = function(args)
