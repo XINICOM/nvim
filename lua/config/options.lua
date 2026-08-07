@@ -20,3 +20,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
+
+-- 视觉效果
+vim.opt.signcolumn = "yes"
+vim.opt.termguicolors = true
