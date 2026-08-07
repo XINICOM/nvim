@@ -13,10 +13,10 @@ return {
 						ignored = true,
 					},
 				},
-				actions = {
-					-- 	["<leader>wv"] = { "file_vsplit", mode = { "n" } },
-					["<C-s>"] = { "file_split", mode = { "n" } },
-				},
+
+				-- actions = {
+				-- 	["<C-s>"] = { "file_split", mode = { "n" } },
+				-- },
 			},
 		},
 	},
