@@ -7,8 +7,8 @@ local map = vim.keymap.set
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
 -- 在 ~/.config/nvim/lua/plugins/keymaps.lua 中添加
-map("n", "gt", "H", { desc = "Move to top of screen" })
-map("n", "gb", "L", { desc = "Move to bottom of screen" })
+map("n", "gh", "H", { desc = "Move to top of screen" })
+map("n", "gl", "L", { desc = "Move to bottom of screen" })
 
 map({ "i", "x", "s" }, "jk", "<esc>", { desc = "Esc" })
 
