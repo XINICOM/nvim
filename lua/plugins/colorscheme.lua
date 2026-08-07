@@ -9,11 +9,11 @@
 -- }
 
 return {
-    { "Mofiqul/vscode.nvim", lazy = true, priority = 1000 },
-    {
-        "LazyVim/LazyVim",
-        opts = {
-            colorscheme = "vscode",
-        },
-    },
+	{ "Mofiqul/vscode.nvim", lazy = true, priority = 1000 },
+	{
+		"LazyVim/LazyVim",
+		opts = {
+			colorscheme = "vscode",
+		},
+	},
 }
