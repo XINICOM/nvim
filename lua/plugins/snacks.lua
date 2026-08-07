@@ -9,9 +9,13 @@ return {
 						ignored = true,
 					},
 					files = {
-						hidden = true, -- show dotfiles in fuzzy finder
-						ignored = true, -- optional: show gitignored files
+						hidden = true,
+						ignored = true,
 					},
+				},
+				actions = {
+					-- 	["<leader>wv"] = { "file_vsplit", mode = { "n" } },
+					["<C-s>"] = { "file_split", mode = { "n" } },
 				},
 			},
 		},
